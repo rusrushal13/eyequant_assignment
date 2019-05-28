@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from screenshot_api.utilities import good_url, save_image
@@ -43,8 +44,8 @@ class FetchScreenshotView(APIView):
                     return render(
                         request,
                         'screenshot.html', {
-                            'screenshot_url': '/'.join(
-                                [base.MEDIA_URL, image.image.name]
+                            'screenshot_url': os.path.join(
+                                base.MEDIA_URL, image.image.name
                             ),
                             'screenshot': image
                         })
@@ -65,9 +66,11 @@ class FetchScreenshotView(APIView):
                                    response)
 
                 if view:
+                    s_url = os.path.join(base.MEDIA_URL, image.image.name)
+                    print(s_url)
                     return render(request, 'screenshot.html', {
-                        'screenshot_url': '/'.join(
-                            [base.MEDIA_URL, image.image.name]
+                        'screenshot_url': os.path.join(
+                            base.MEDIA_URL, image.image.name
                         ),
                         'screenshot': image
                     })
