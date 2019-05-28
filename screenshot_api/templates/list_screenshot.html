@@ -1,0 +1,5 @@
+{% for screenshot in screenshots %}
+<img src="/media/{{ screenshot.image }}">
+<h2>{{ screenshot.image_url }}</h2>
+<h2> {{ screenshot.created }} </h2>
+{% endfor %}
