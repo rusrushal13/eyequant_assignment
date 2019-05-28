@@ -1,2 +1,2 @@
-<img src="{{ screenshot_url }}">
+<img src="{% url 'serve-media' screenshot.image_url.name %}">
 <h1>{{ screenshot.created }}</h1>

@@ -10,9 +10,8 @@ class Screenshot(models.Model):
 
     description = models.TextField(blank=True,
                                    null=True)
-    image = models.ImageField('Label')
-    image_url = models.TextField(blank=True,
-                                 null=True,
+    image_url = models.ImageField('Label')
+    website_url = models.TextField(blank=True,
                                  unique=True)
     viewport = models.CharField(blank=True,
                                 null=True,
@@ -26,17 +25,3 @@ class Screenshot(models.Model):
         ARGS:
         """
         return self.description or ""
-
-    def json(self):
-        """
-        Return the JSON dict of the object.
-
-        ARGS:
-        """
-        return {
-            'Description': self.description,
-            'image_name': str(self.image),
-            'image_url': self.image_url,
-            'viewport': self.viewport,
-            'timestamp': self.created
-        }

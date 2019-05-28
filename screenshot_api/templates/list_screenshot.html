@@ -1,6 +1,4 @@
 {% for screenshot in screenshots %}
-<img src="/media{{ screenshot.image }}">
-<p>{{ screenshot.image}}</p>
-<h2>{{ screenshot.image_url }}</h2>
-<h2> {{ screenshot.created }} </h2>
+    <img src="{% url 'serve-media' screenshot.image_url.name %}">
+    <h2>{{ screenshot.website_url }} {{ screenshot.created }}</h2>
 {% endfor %}

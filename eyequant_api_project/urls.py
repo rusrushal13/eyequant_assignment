@@ -21,4 +21,4 @@ from eyequant_api_project.settings import base
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('screenshot_api.urls')),
-] + static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
+]

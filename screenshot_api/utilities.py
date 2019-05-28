@@ -32,10 +32,10 @@ def save_image(url, description, viewport, response):
     image_name = str(uuid.uuid4())
     screenshot = Screenshot.objects.create(
         description=description if description else "",
-        image_url=url,
+        website_url=url,
         viewport=viewport)
 
-    screenshot.image.save(image_name,
+    screenshot.image_url.save(image_name,
                           ContentFile(response.content),
                           save=True)
 
