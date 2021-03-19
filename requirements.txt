@@ -2,7 +2,7 @@ autopep8==1.4.4
 certifi==2019.3.9
 chardet==3.0.4
 Django==2.2.1
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 gunicorn==19.9.0
 idna==2.8
 pep8==1.7.1
