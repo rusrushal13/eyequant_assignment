@@ -10,7 +10,7 @@ Pillow==6.0.0
 psycopg2==2.8.2
 pycodestyle==2.5.0
 pydocstyle==3.0.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2019.1
 requests==2.22.0
 six==1.12.0
